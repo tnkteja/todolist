@@ -3,6 +3,7 @@ import axios from 'axios';
 import { setAuthToken } from '../AuthToken';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -70,10 +71,17 @@ function Login() {
                 value={password} onChange={changePassword}
             />
             </Form.Group>
+
         </Form>
         {/* <input type="password" placeholder="Password" value={password} onChange={changePassword}></input> */}
         <br></br>
+        <div>
         <Button variant="info" onClick={login}>Login</Button>
+        </div>
+        <br></br>
+        <Alert key={"info"} variant={"info"}>
+          Any valid email address and non-empty password!
+        </Alert>
     </div>
   )
 }
