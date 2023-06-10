@@ -16,7 +16,7 @@ function Home() {
         if(authenticated !== "authenticated"){
         navigate("login")
     }
-    },[authenticated])
+    },[authenticated, navigate])
     
     const logout = ()=>{
         setAuthToken('')
