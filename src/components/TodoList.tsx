@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Todo from './Todo'
-import { Accordion } from 'react-bootstrap'
+import { Accordion, Button } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form';
 
 function TodoList(props:any):any {
     const [name, setName] = useState('')
@@ -20,15 +21,16 @@ function TodoList(props:any):any {
     }
   return (
     <div>
-        <div>
-            <input type="text" value={name} onChange={change}></input>
-            <button onClick={addToDo}>Add todo</button>
-        </div>
         <Accordion>
             {
-            toDoList.map( (toDo: any) => <Todo {...toDo}></Todo> )
+                toDoList.map( (toDo: any) => <Todo {...toDo}></Todo> )
             }
         </Accordion>
+        <div>
+            <Form.Control type="text" value={name} onChange={change} placeholder='Enter to do item here...'></Form.Control>
+            <br></br>
+            <Button variant="info" onClick={addToDo}>Add todo</Button>
+        </div>
     </div>
   )
 }
