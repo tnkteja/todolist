@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import Todo from './Todo'
 import { Accordion, Button } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form';
