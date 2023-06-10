@@ -1,6 +1,9 @@
-import React from "react";
+import React, { Dispatch, SetStateAction} from "react";
 
-export const UserContext = React.createContext('');
+export const UserContext = React.createContext({
+    authenticated: '',
+    tasks:[]
+});
 
 export const UserProvider = UserContext.Provider;
 
